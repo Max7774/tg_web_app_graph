@@ -19,7 +19,8 @@ const Chart = () => {
   return (
     <div className="w-full bg-bg-color rounded-2xl shadow-xl light:bg-white-1000 dark:bg-gray-1000 p-4 md:p-6">
       <Header>
-        История состава тела {window.Telegram.WebApp.initDataUnsafe.user}
+        История состава тела{" "}
+        {window.Telegram.WebApp.initDataUnsafe.user.first_name}
       </Header>
       <div id="line-chart"></div>
     </div>
