@@ -23,7 +23,7 @@ interface WebApp {
 }
 
 interface Telegram {
-  WebApp: WebApp;
+  WebApp: any;
 }
 
 interface Window {
