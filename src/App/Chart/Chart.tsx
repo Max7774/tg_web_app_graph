@@ -6,6 +6,7 @@ import cn from "clsx";
 import { CgGym } from "react-icons/cg";
 const Chart = () => {
   const [theme, setTheme] = useState("dark");
+
   useEffect(() => {
     if (
       document.getElementById("line-chart") &&
@@ -59,6 +60,7 @@ const Chart = () => {
           <div className="bg-[#7E3AF2] rounded-full h-[15px] w-[15px]"></div>
           <div className="text-mainText">Масса жира</div>
         </div>
+        {window.Telegram.WebApp.themeParams.bg_color}
         <div className="flex flex-row items-center my-3 mx-10 gap-3">
           <div className="bg-[#75e3ff] rounded-full h-[15px] w-[15px]"></div>
           <div className="text-mainText">Мышечная масса</div>
