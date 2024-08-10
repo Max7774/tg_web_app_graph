@@ -1,9 +1,10 @@
 import { options } from "./data";
 import { useEffect, useState } from "react";
 import ApexCharts from "apexcharts";
-import Header from "../Header/Header";
+import Header from "../UI/Header/Header";
 import cn from "clsx";
 import { CgGym } from "react-icons/cg";
+
 const Chart = () => {
   const [theme, setTheme] = useState("dark");
 
@@ -41,9 +42,15 @@ const Chart = () => {
           История состава тела:
           {window.Telegram.WebApp.initDataUnsafe.user.first_name}
         </Header>
+
+        {/* ======== График ========== */}
+
         <div id="line-chart"></div>
+
+        {/* ========================== */}
+
         <div className="flex justify-center">
-          <div className="h-[1px] bg-gray w-5/6 my-2"></div>
+          <div className="h-[1px] bg-gray w-5/6 my-3"></div>
         </div>
         <div className="flex flex-row justify-center flex-wrap gap-2">
           <div className="flex flex-row items-center gap-2">

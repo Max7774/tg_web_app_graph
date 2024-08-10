@@ -1,10 +1,16 @@
 import Chart from "./Chart/Chart";
-import StyleWrapper from "./StyleWrapper/StyleWrapper";
+import FetchChartWrapper from "./Wrappers/FetchChartWrapper/FetchChartWrapper";
+import ProvidersWrapper from "./Wrappers/ProvidersWrapper/ProvidersWrapper";
+import StyleWrapper from "./Wrappers/StyleWrapper/StyleWrapper";
 function App() {
   return (
-    <StyleWrapper>
-      <Chart />
-    </StyleWrapper>
+    <ProvidersWrapper>
+      <StyleWrapper>
+        <FetchChartWrapper>
+          <Chart />
+        </FetchChartWrapper>
+      </StyleWrapper>
+    </ProvidersWrapper>
   );
 }
 
