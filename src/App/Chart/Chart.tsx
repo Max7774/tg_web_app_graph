@@ -33,10 +33,13 @@ const Chart = () => {
   return (
     <>
       <div
-        className={cn("w-full bg-bg-color rounded-2xl shadow-xl p-4 md:p-6", {
-          "shadow-darkShadow": theme === "dark",
-          "shadow-lightShadow": theme === "light",
-        })}
+        className={cn(
+          "w-full bg-bg-color rounded-[30px] shadow-xl p-4 md:p-6",
+          {
+            "shadow-darkShadow": theme === "dark",
+            "shadow-lightShadow": theme === "light",
+          }
+        )}
       >
         <Header>
           История состава тела:
