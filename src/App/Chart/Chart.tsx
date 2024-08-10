@@ -21,7 +21,7 @@ const Chart = () => {
   }, []);
 
   useEffect(() => {
-    if (window.Telegram.WebApp.themeParams.bg_color === "#FFFFFF") {
+    if (window.Telegram.WebApp.themeParams.bg_color === "#ffffff") {
       setTheme("light");
     } else {
       setTheme("dark");
@@ -60,14 +60,13 @@ const Chart = () => {
           <div className="bg-[#7E3AF2] rounded-full h-[15px] w-[15px]"></div>
           <div className="text-mainText">Масса жира</div>
         </div>
-        {window.Telegram.WebApp.themeParams.bg_color}
         <div className="flex flex-row items-center my-3 mx-10 gap-3">
           <div className="bg-[#75e3ff] rounded-full h-[15px] w-[15px]"></div>
           <div className="text-mainText">Мышечная масса</div>
         </div>
       </div>
       <div className="flex justify-center">
-        <CgGym size={300} />
+        <CgGym color={theme === "dark" ? "white" : "black"} size={300} />
       </div>
     </>
   );
