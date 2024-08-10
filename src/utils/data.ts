@@ -70,7 +70,7 @@ export const data = [
     amt: 2290,
   },
   {
-    name: "10.02.2024",
+    name: "12.02.2024",
     kv: 2314,
     uv: 2780,
     pv: 3908,
