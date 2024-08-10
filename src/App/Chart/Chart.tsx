@@ -45,7 +45,7 @@ const Chart = () => {
       </div>
       <div
         className={cn(
-          "w-full mt-10 bg-bg-color rounded-2xl shadow-xl p-4 md:p-6",
+          "flex flex-row justify-around gap-5 w-full mt-10 bg-bg-color rounded-2xl shadow-xl p-4 md:p-6",
           {
             "shadow-darkShadow": theme === "dark",
             "shadow-lightShadow": theme === "light",
