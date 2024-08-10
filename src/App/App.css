@@ -5,3 +5,33 @@
   color: var(--tg-theme-text-color);
   background-color: var(--tg-theme-bg-color);
 }
+
+@keyframes glare {
+  0% {
+    transform: rotate(45deg) translate(-150%, -150%);
+  }
+  100% {
+    transform: rotate(45deg) translate(150%, 150%);
+  }
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.glare-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0) 60%
+  );
+  transform: rotate(45deg);
+  animation: glare 5s infinite linear;
+  pointer-events: none; /* Чтобы блик не мешал взаимодействию с элементами карточки */
+}

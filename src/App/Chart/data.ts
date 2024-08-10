@@ -13,7 +13,7 @@ export const options = {
     animations: {
       enabled: true,
       easing: "easeout",
-      speed: 3000,
+      speed: 1000,
       animateGradually: {
         enabled: true,
         delay: 150,

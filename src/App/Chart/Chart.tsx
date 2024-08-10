@@ -4,6 +4,9 @@ import ApexCharts from "apexcharts";
 import Header from "../UI/Header/Header";
 import cn from "clsx";
 import { CgGym } from "react-icons/cg";
+import Card from "../UI/Card/Card";
+import Eat from "../UI/Icons/Eat";
+import Sleep from "../UI/Icons/Sleep";
 
 const Chart = () => {
   const [theme, setTheme] = useState("dark");
@@ -70,9 +73,14 @@ const Chart = () => {
           </div>
         </div>
       </div>
-      <div className="bg-gray mx-3 my-5 rounded-[30px]">
-        <div className="flex flex-row"></div>
-      </div>
+      <Card
+        Icon={<Eat color={theme === "dark" ? "white" : "black"} />}
+        text="Чаще ешьте для большей енергии во время спорта!"
+      />
+      <Card
+        Icon={<Sleep color={theme === "dark" ? "white" : "black"} />}
+        text="Чаще спите для большей продуктивности!"
+      />
       <div className="flex justify-center">
         <CgGym color={theme === "dark" ? "white" : "black"} size={300} />
       </div>
