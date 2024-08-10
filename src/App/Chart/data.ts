@@ -46,7 +46,7 @@ export const options = {
     {
       name: "Мышечная масса",
       data: [6540, 6458, 6356, 6626, 6256, 6656],
-      color: "#3F87FF",
+      color: "#75e3ff",
     },
   ],
   legend: {
