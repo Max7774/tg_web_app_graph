@@ -27,6 +27,12 @@ module.exports = {
     },
     colors,
     extend: {
+      boxShadow: {
+        "telegram-light":
+          "0 4px 6px -1px var(--tg-shadow-light), 0 2px 4px -2px var(--tg-shadow-light)",
+        "telegram-dark":
+          "0 4px 6px -1px var(--tg-shadow-dark), 0 2px 4px -2px var(--tg-shadow-dark)",
+      },
       fontSize: {
         xs: "0.82rem",
         sm: "0.98rem",
@@ -71,6 +77,11 @@ module.exports = {
         opacity: "animationOpacity .5s ease-in-out",
         scaleIn: "scaleIn .35s ease-in-out",
       },
+    },
+  },
+  variants: {
+    extend: {
+      boxShadow: ["dark"],
     },
   },
   plugins: [],
