@@ -79,10 +79,5 @@ module.exports = {
       },
     },
   },
-  variants: {
-    extend: {
-      boxShadow: ["dark"],
-    },
-  },
   plugins: [],
 };
