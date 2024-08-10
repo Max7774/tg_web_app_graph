@@ -42,17 +42,10 @@ const Chart = () => {
           {window.Telegram.WebApp.initDataUnsafe.user.first_name}
         </Header>
         <div id="line-chart"></div>
-      </div>
-      <div
-        className={cn(
-          "w-full mt-10 bg-bg-color rounded-2xl shadow-xl p-4 md:p-6",
-          {
-            "shadow-darkShadow": theme === "dark",
-            "shadow-lightShadow": theme === "light",
-          }
-        )}
-      >
-        <div className="flex flex-row flex-wrap gap-2">
+        <div className="flex justify-center">
+          <div className="h-[1px] bg-gray w-5/6 my-2"></div>
+        </div>
+        <div className="flex flex-row justify-center flex-wrap gap-2">
           <div className="flex flex-row items-center gap-2">
             <div className="bg-[#1A56DB] rounded-full h-[15px] w-[15px]"></div>
             <div className="text-mainText text-nowrap">Вес</div>
