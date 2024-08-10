@@ -2,7 +2,7 @@ interface ISleepProps {
   color: "white" | "black";
 }
 
-const Sleep = ({ color }: ISleepProps) => {
+const Sleep = ({ color = "black" }: ISleepProps) => {
   return (
     <svg
       width="50px"

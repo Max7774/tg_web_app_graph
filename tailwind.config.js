@@ -1,10 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 const twColors = require("tailwindcss/colors");
-
+// var(--tg-theme-hint-color)
 const colors = {
   transparent: twColors.transparent,
   black: "#2E3239",
-  gray: "var(--tg-theme-hint-color)",
+  gray: "#b5b5b5",
   white: twColors.white,
   primary: "#FFBF00",
   secondary: "#F2F2F5",
@@ -75,10 +75,25 @@ module.exports = {
             transform: "scale(1)",
           },
         },
+        slideInLeft: {
+          "0%": { transform: "translateX(-100%)", opacity: "0" },
+          "100%": { transform: "translateX(0)", opacity: "1" },
+        },
+        slideInRight: {
+          "0%": { transform: "translateX(100%)", opacity: "0" },
+          "100%": { transform: "translateX(0)", opacity: "1" },
+        },
+        slideInUp: {
+          "0%": { transform: "translateY(100%)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
+        },
       },
       animation: {
         opacity: "animationOpacity .5s ease-in-out",
         scaleIn: "scaleIn .35s ease-in-out",
+        slideInLeft: "slideInLeft 1s ease-out",
+        slideInRight: "slideInRight 1s ease-out",
+        slideInUp: "slideInUp 1s ease-out",
       },
     },
   },

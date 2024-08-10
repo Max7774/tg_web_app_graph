@@ -7,9 +7,10 @@ import { CgGym } from "react-icons/cg";
 import Card from "../UI/Card/Card";
 import Eat from "../UI/Icons/Eat";
 import Sleep from "../UI/Icons/Sleep";
+import EatingMan from "../UI/Img/EatingMan";
 
 const Chart = () => {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
 
   useEffect(() => {
     if (
@@ -73,16 +74,32 @@ const Chart = () => {
           </div>
         </div>
       </div>
-      <Card
-        Icon={<Eat color={theme === "dark" ? "white" : "black"} />}
-        theme={theme}
-        text="Чаще ешьте для большей енергии во время спорта!"
-      />
-      <Card
-        Icon={<Sleep color={theme === "dark" ? "white" : "black"} />}
-        theme={theme}
-        text="Чаще спите для большей продуктивности!"
-      />
+
+      {/* ======== Список карт ========== */}
+
+      <div className="mt-9">
+        <Card
+          Icon={<EatingMan />}
+          theme={theme}
+          text="Тренируйся так, как будто завтра не существует!"
+          className="animate-slideInLeft"
+        />
+        <Card
+          Icon={<Eat color={theme === "dark" ? "white" : "black"} />}
+          theme={theme}
+          text="Ешь правильно, тренируйся усердно — достигай величия!"
+          className="animate-slideInRight"
+        />
+        <Card
+          Icon={<Sleep color={theme === "dark" ? "white" : "black"} />}
+          theme={theme}
+          text="Чаще спите для большей продуктивности!"
+          className="animate-slideInLeft"
+        />
+      </div>
+
+      {/* ========================== */}
+
       <div className="flex justify-center">
         <CgGym color={theme === "dark" ? "white" : "black"} size={300} />
       </div>
