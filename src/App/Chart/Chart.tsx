@@ -45,24 +45,26 @@ const Chart = () => {
       </div>
       <div
         className={cn(
-          "flex flex-row justify-around gap-5 w-full mt-10 bg-bg-color rounded-2xl shadow-xl p-4 md:p-6",
+          "w-full mt-10 bg-bg-color rounded-2xl shadow-xl p-4 md:p-6",
           {
             "shadow-darkShadow": theme === "dark",
             "shadow-lightShadow": theme === "light",
           }
         )}
       >
-        <div className="flex flex-row items-center mt-3 mx-10 gap-3">
-          <div className="bg-[#1A56DB] rounded-full h-[15px] w-[15px]"></div>
-          <div className="text-mainText">Общий вес</div>
-        </div>
-        <div className="flex flex-row items-center my-3 mx-10 gap-3">
-          <div className="bg-[#7E3AF2] rounded-full h-[15px] w-[15px]"></div>
-          <div className="text-mainText">Масса жира</div>
-        </div>
-        <div className="flex flex-row items-center my-3 mx-10 gap-3">
-          <div className="bg-[#75e3ff] rounded-full h-[15px] w-[15px]"></div>
-          <div className="text-mainText">Мышечная масса</div>
+        <div className="flex flex-row flex-wrap gap-2">
+          <div className="flex flex-row items-center gap-2">
+            <div className="bg-[#1A56DB] rounded-full h-[15px] w-[15px]"></div>
+            <div className="text-mainText text-nowrap">Вес</div>
+          </div>
+          <div className="flex flex-row items-center gap-2">
+            <div className="bg-[#7E3AF2] rounded-full h-[15px] w-[15px]"></div>
+            <div className="text-mainText text-nowrap">Масса жира</div>
+          </div>
+          <div className="flex flex-row items-center gap-2">
+            <div className="bg-[#75e3ff] rounded-full h-[15px] w-[15px]"></div>
+            <div className="text-mainText text-nowrap">Мышечная масса</div>
+          </div>
         </div>
       </div>
       <div className="flex justify-center">
