@@ -75,10 +75,12 @@ const Chart = () => {
       </div>
       <Card
         Icon={<Eat color={theme === "dark" ? "white" : "black"} />}
+        theme={theme}
         text="Чаще ешьте для большей енергии во время спорта!"
       />
       <Card
         Icon={<Sleep color={theme === "dark" ? "white" : "black"} />}
+        theme={theme}
         text="Чаще спите для большей продуктивности!"
       />
       <div className="flex justify-center">
