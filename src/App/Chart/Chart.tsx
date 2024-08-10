@@ -6,6 +6,7 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
+  Legend,
 } from "recharts";
 import { data } from "../../utils/data";
 import { CustomizedLabel } from "../../helpers/CustomizedLabel";
@@ -29,14 +30,21 @@ const Chart = () => {
         <XAxis dataKey="name" height={60} tick={<CustomizedAxisTick />} />
         <YAxis />
         <Tooltip />
+        <Legend />
         <Line
           type="monotone"
           dataKey="pv"
           stroke="#8884d8"
           label={<CustomizedLabel />}
+          name="Жир"
         />
-        <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-        <Line type="monotone" dataKey="kv" stroke="#ca8282" />
+        <Line
+          type="monotone"
+          dataKey="uv"
+          name="Мышечная масса"
+          stroke="#82ca9d"
+        />
+        <Line type="monotone" dataKey="kv" name="Общий вес" stroke="#ca8282" />
       </LineChart>
     </ResponsiveContainer>
   );
