@@ -15,6 +15,7 @@ const colors = {
   red: twColors.red[400],
   purple: "#6931e0",
   blue: "#2e33bf",
+  darkShadow: "rgba(255, 255, 255, 0.1)",
 };
 
 module.exports = {

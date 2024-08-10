@@ -20,12 +20,12 @@ const Chart = () => {
   return (
     <div
       className={cn("w-full bg-bg-color rounded-2xl shadow-xl p-4 md:p-6", {
-        "shadow-telegram-dark":
+        "shadow-darkShadow":
           window.Telegram.WebApp.themeParams.bg_color !== "#FFFFFF",
       })}
     >
       <Header>
-        История состава тела:{" "}
+        История состава тела:
         {window.Telegram.WebApp.initDataUnsafe.user.first_name}
       </Header>
       <div id="line-chart"></div>
