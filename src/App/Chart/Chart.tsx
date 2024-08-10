@@ -39,7 +39,7 @@ const Chart = () => {
       >
         <Header>
           История состава тела:
-          {/* {window.Telegram.WebApp.initDataUnsafe.user.first_name} */}
+          {window.Telegram.WebApp.initDataUnsafe.user.first_name}
         </Header>
         <div id="line-chart"></div>
       </div>
