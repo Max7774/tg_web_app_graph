@@ -17,7 +17,7 @@ const Chart = () => {
     }
   }, []);
   return (
-    <div className="w-full bg-white rounded-2xl shadow-xl dark:bg-gray-1000 p-4 md:p-6">
+    <div className="w-full bg-bg-color rounded-2xl shadow-xl dark:bg-gray-1000 p-4 md:p-6">
       <Header>История состава тела User</Header>
       <div id="line-chart"></div>
     </div>

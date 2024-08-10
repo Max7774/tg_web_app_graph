@@ -8,7 +8,7 @@ const colors = {
   white: twColors.white,
   primary: "#FFBF00",
   secondary: "#F2F2F5",
-  "bg-color": "#524fff",
+  "bg-color": "var(--tg-theme-bg-color)",
   "bg-color-s": "#CFCFCF",
   aqua: "#268697",
   green: twColors.green[400],
