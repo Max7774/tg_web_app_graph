@@ -42,8 +42,8 @@ const Chart = () => {
         )}
       >
         <Header>
-          История состава тела:
-          {window.Telegram.WebApp.initDataUnsafe.user.first_name}
+          История состава тела:{" "}
+          {/* {window.Telegram.WebApp.initDataUnsafe.user.first_name} */}
         </Header>
 
         {/* ======== График ========== */}
@@ -69,6 +69,9 @@ const Chart = () => {
             <div className="text-mainText text-nowrap">Мышечная масса</div>
           </div>
         </div>
+      </div>
+      <div className="bg-gray mx-3 my-5 rounded-[30px]">
+        <div className="flex flex-row"></div>
       </div>
       <div className="flex justify-center">
         <CgGym color={theme === "dark" ? "white" : "black"} size={300} />

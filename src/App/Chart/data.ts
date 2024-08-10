@@ -10,6 +10,15 @@ export const options = {
     toolbar: {
       show: false,
     },
+    animations: {
+      enabled: true,
+      easing: "easeout",
+      speed: 3000,
+      animateGradually: {
+        enabled: true,
+        delay: 150,
+      },
+    },
   },
   markers: {
     size: 4,
