@@ -1,0 +1,13 @@
+.container_1 {
+  position: relative;
+  width: 100%;
+  padding-bottom: 250px;
+}
+
+.container_2 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
