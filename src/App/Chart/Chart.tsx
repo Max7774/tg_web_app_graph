@@ -22,6 +22,8 @@ const Chart = () => {
       className={cn("w-full bg-bg-color rounded-2xl shadow-xl p-4 md:p-6", {
         "shadow-darkShadow":
           window.Telegram.WebApp.themeParams.bg_color !== "#FFFFFF",
+        "shadow-lightShadow":
+          window.Telegram.WebApp.themeParams.bg_color === "#FFFFFF",
       })}
     >
       <Header>
