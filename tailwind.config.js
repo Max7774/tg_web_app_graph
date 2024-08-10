@@ -31,7 +31,7 @@ module.exports = {
         "telegram-light":
           "0 4px 6px -1px var(--tg-shadow-light), 0 2px 4px -2px var(--tg-shadow-light)",
         "telegram-dark":
-          "0 4px 6px -1px var(--tg-shadow-dark), 0 2px 4px -2px var(--tg-shadow-dark)",
+          "0 4px 6px -1px rgba(255, 255, 255, 0.1), 0 2px 4px -2px rgba(255, 255, 255, 0.1)",
       },
       fontSize: {
         xs: "0.82rem",
