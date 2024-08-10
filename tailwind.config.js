@@ -17,6 +17,7 @@ const colors = {
   blue: "#2e33bf",
   darkShadow: "rgba(255, 255, 255, 0.1)",
   lightShadow: "rgba(0, 0, 0, 0.1)",
+  mainText: "var(--tg-theme-text-color)",
 };
 
 module.exports = {
