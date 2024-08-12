@@ -1,4 +1,5 @@
 [[redirects]]
-  from = "/api/v1"
+  from = "/api/v1/*"
   to = "https://app.leadteh.ru"
   status = 200
+  force = true

@@ -14,7 +14,6 @@ export default () => {
         "/api/v1": {
           target: "https://app.leadteh.ru",
           changeOrigin: true,
-          secure: false,
         },
       },
     },
