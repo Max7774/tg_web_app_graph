@@ -2,6 +2,7 @@
 export const getContentType = () => ({
   "Content-Type": "application/json",
   "X-Requested-With": "XMLHttpRequest",
+  "Access-Control-Allow-Origin": "*",
 });
 
 export const errorCatch = (error: any): string => {

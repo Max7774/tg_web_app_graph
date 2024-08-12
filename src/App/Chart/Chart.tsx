@@ -13,20 +13,26 @@ import { useAppSelector } from "../../hooks/useAppSelector";
 const Chart = () => {
   const [theme, setTheme] = useState("light");
 
-  const { data, error } = useAppSelector((state) => state.chart);
+  const { data } = useAppSelector((state) => state.chart);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const resultOptions = {
+    ...options,
+    ...data,
+  };
 
   useEffect(() => {
     if (
       document.getElementById("line-chart") &&
       typeof ApexCharts !== "undefined"
     ) {
-      const chart = new ApexCharts(document.getElementById("line-chart"), {
-        ...options,
-        ...data,
-      });
+      const chart = new ApexCharts(
+        document.getElementById("line-chart"),
+        resultOptions
+      );
       chart.render();
     }
-  }, [data]);
+  }, [resultOptions]);
 
   useEffect(() => {
     if (window.Telegram.WebApp.themeParams.bg_color === "#ffffff") {
