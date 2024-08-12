@@ -63,7 +63,7 @@ const Chart = () => {
         top: -26,
       },
     },
-    series: dataCopy.series,
+    series: dataCopy.series || [{ name: "Error", data: [0, 1], color: "red" }],
     legend: {
       show: false,
     },
@@ -72,7 +72,7 @@ const Chart = () => {
       curve: "smooth",
     },
     xaxis: {
-      categories: dataCopy.xaxis.categories,
+      categories: dataCopy?.xaxis?.categories || ["Error", "Error"],
       labels: {
         show: true,
         style: {
@@ -137,7 +137,7 @@ const Chart = () => {
       >
         <Header>
           История состава тела:{" "}
-          {window.Telegram.WebApp.initDataUnsafe.user.first_name}
+          {window.Telegram.WebApp.initDataUnsafe.user?.first_name || "User"}
         </Header>
 
         {/* ======== График ========== */}
