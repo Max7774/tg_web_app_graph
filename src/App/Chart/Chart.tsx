@@ -101,8 +101,6 @@ const Chart = () => {
         />
       </div>
 
-      <div>{JSON.stringify(error)}</div>
-
       {/* ========================== */}
 
       <div className="flex justify-center">
