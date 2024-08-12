@@ -12,7 +12,7 @@ export default () => {
       port: 3000,
       proxy: {
         "/api/v1": {
-          target: process.env.VITE_BASE_URL,
+          target: "https://app.leadteh.ru",
           changeOrigin: true,
           secure: false,
         },
