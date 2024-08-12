@@ -99,13 +99,9 @@ const Chart = () => {
           text="Чаще спите для большей продуктивности!"
           className="animate-slideInLeft"
         />
-        <Card
-          Icon={<Sleep color={theme === "dark" ? "white" : "black"} />}
-          theme={theme}
-          text={error}
-          className="animate-slideInLeft"
-        />
       </div>
+
+      <div>{JSON.stringify(error)}</div>
 
       {/* ========================== */}
 
