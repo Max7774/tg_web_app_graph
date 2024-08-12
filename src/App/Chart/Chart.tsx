@@ -13,7 +13,7 @@ import { useAppSelector } from "../../hooks/useAppSelector";
 const Chart = () => {
   const [theme, setTheme] = useState("light");
 
-  const { data } = useAppSelector((state) => state.chart);
+  const { data, error } = useAppSelector((state) => state.chart);
 
   useEffect(() => {
     if (
@@ -50,7 +50,7 @@ const Chart = () => {
       >
         <Header>
           История состава тела:{" "}
-          {/* {window.Telegram.WebApp.initDataUnsafe.user.first_name} */}
+          {window.Telegram.WebApp.initDataUnsafe.user.first_name}
         </Header>
 
         {/* ======== График ========== */}
@@ -97,6 +97,12 @@ const Chart = () => {
           Icon={<Sleep color={theme === "dark" ? "white" : "black"} />}
           theme={theme}
           text="Чаще спите для большей продуктивности!"
+          className="animate-slideInLeft"
+        />
+        <Card
+          Icon={<Sleep color={theme === "dark" ? "white" : "black"} />}
+          theme={theme}
+          text={error}
           className="animate-slideInLeft"
         />
       </div>

@@ -5,11 +5,13 @@ import { getChartData } from "./chart.actions";
 type TChartDataState = {
   isLoading: boolean;
   data: any;
+  error: string;
 };
 
 const initialState: TChartDataState = {
   isLoading: true,
   data: {},
+  error: "",
 };
 
 export const chartSlice = createSlice({
@@ -25,9 +27,10 @@ export const chartSlice = createSlice({
         state.isLoading = false;
         state.data = payload as any;
       })
-      .addCase(getChartData.rejected, (state) => {
+      .addCase(getChartData.rejected, (state, { payload }) => {
         state.isLoading = false;
         state.data = [];
+        state.error = payload as string;
       });
   },
 });
