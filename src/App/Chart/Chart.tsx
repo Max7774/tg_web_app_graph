@@ -8,22 +8,25 @@ import Card from "../UI/Card/Card";
 import Eat from "../UI/Icons/Eat";
 import Sleep from "../UI/Icons/Sleep";
 import EatingMan from "../UI/Img/EatingMan";
+import { useAppSelector } from "../../hooks/useAppSelector";
 
 const Chart = () => {
   const [theme, setTheme] = useState("light");
+
+  const { data } = useAppSelector((state) => state.chart);
 
   useEffect(() => {
     if (
       document.getElementById("line-chart") &&
       typeof ApexCharts !== "undefined"
     ) {
-      const chart = new ApexCharts(
-        document.getElementById("line-chart"),
-        options
-      );
+      const chart = new ApexCharts(document.getElementById("line-chart"), {
+        ...options,
+        ...data,
+      });
       chart.render();
     }
-  }, []);
+  }, [data]);
 
   useEffect(() => {
     if (window.Telegram.WebApp.themeParams.bg_color === "#ffffff") {

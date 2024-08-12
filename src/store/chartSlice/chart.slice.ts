@@ -4,12 +4,12 @@ import { getChartData } from "./chart.actions";
 
 type TChartDataState = {
   isLoading: boolean;
-  data: any[];
+  data: any;
 };
 
 const initialState: TChartDataState = {
   isLoading: true,
-  data: [],
+  data: {},
 };
 
 export const chartSlice = createSlice({
@@ -23,7 +23,7 @@ export const chartSlice = createSlice({
       })
       .addCase(getChartData.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        state.data = payload;
+        state.data = payload as any;
       })
       .addCase(getChartData.rejected, (state) => {
         state.isLoading = false;
