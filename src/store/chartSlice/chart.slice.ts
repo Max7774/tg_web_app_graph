@@ -4,13 +4,12 @@ import { getChartData } from "./chart.actions";
 
 type TChartDataState = {
   isLoading: boolean;
-  data: any;
+  data?: any;
   error: string;
 };
 
 const initialState: TChartDataState = {
   isLoading: true,
-  data: {},
   error: "",
 };
 

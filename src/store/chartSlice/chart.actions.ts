@@ -8,7 +8,11 @@ export const getChartData = createAsyncThunk(
     try {
       const { data } = await ChartService.getChartData();
 
+      //   console.log(data);
+
       const result = transformDataForChart(data.data);
+
+      //   console.log(result);
       return result;
     } catch (error) {
       return rejectWithValue(error);

@@ -1,5 +1,5 @@
-import { options } from "./data";
-import { useEffect, useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect, useRef, useState } from "react";
 import ApexCharts from "apexcharts";
 import Header from "../UI/Header/Header";
 import cn from "clsx";
@@ -9,16 +9,87 @@ import Eat from "../UI/Icons/Eat";
 import Sleep from "../UI/Icons/Sleep";
 import EatingMan from "../UI/Img/EatingMan";
 import { useAppSelector } from "../../hooks/useAppSelector";
+import cloneDeep from "lodash/cloneDeep";
 
 const Chart = () => {
   const [theme, setTheme] = useState("light");
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const chartRef = useRef<any>(null);
 
   const { data } = useAppSelector((state) => state.chart);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const resultOptions = {
-    ...options,
-    ...data,
+  const dataCopy = cloneDeep(data);
+
+  const options = {
+    chart: {
+      height: "100%",
+      maxWidth: "100%",
+      type: "line",
+      fontFamily: "Inter, sans-serif",
+      dropShadow: {
+        enabled: false,
+      },
+      toolbar: {
+        show: false,
+      },
+      animations: {
+        enabled: true,
+        easing: "easeout",
+        speed: 1000,
+        animateGradually: {
+          enabled: true,
+          delay: 150,
+        },
+      },
+    },
+    markers: {
+      size: 4,
+    },
+    tooltip: {
+      enabled: true,
+      x: {
+        show: false,
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    grid: {
+      show: true,
+      strokeDashArray: 4,
+      padding: {
+        left: 2,
+        right: 2,
+        top: -26,
+      },
+    },
+    series: dataCopy.series,
+    legend: {
+      show: false,
+    },
+    stroke: {
+      width: 6,
+      curve: "smooth",
+    },
+    xaxis: {
+      categories: dataCopy.xaxis.categories,
+      labels: {
+        show: true,
+        style: {
+          fontFamily: "Inter, sans-serif",
+          cssClass: "text-xs font-normal fill-gray-500 dark:fill-gray-400",
+        },
+      },
+      axisBorder: {
+        show: false,
+      },
+      axisTicks: {
+        show: false,
+      },
+    },
+    yaxis: {
+      show: false,
+    },
   };
 
   useEffect(() => {
@@ -26,13 +97,24 @@ const Chart = () => {
       document.getElementById("line-chart") &&
       typeof ApexCharts !== "undefined"
     ) {
-      const chart = new ApexCharts(
-        document.getElementById("line-chart"),
-        resultOptions
-      );
-      chart.render();
+      if (chartRef.current) {
+        chartRef.current.updateOptions(options);
+      } else {
+        chartRef.current = new ApexCharts(
+          document.getElementById("line-chart"),
+          options
+        );
+        chartRef.current.render();
+      }
     }
-  }, [resultOptions]);
+    // Очищаем график при размонтировании
+    return () => {
+      if (chartRef.current) {
+        chartRef.current.destroy();
+        chartRef.current = null;
+      }
+    };
+  }, [options]);
 
   useEffect(() => {
     if (window.Telegram.WebApp.themeParams.bg_color === "#ffffff") {
@@ -40,7 +122,6 @@ const Chart = () => {
     } else {
       setTheme("dark");
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [window.Telegram.WebApp.themeParams.bg_color]);
 
   return (
@@ -56,7 +137,7 @@ const Chart = () => {
       >
         <Header>
           История состава тела:{" "}
-          {window.Telegram.WebApp.initDataUnsafe.user.first_name}
+          {/* {window.Telegram.WebApp.initDataUnsafe.user.first_name} */}
         </Header>
 
         {/* ======== График ========== */}

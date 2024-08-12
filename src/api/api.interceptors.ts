@@ -2,7 +2,7 @@ import axios from "axios";
 import { getContentType } from "./api.helpers";
 
 const axiosOptions = {
-  baseURL: import.meta.env.VITE_BASE_URL,
+  baseURL: "/api/v1",
   headers: getContentType(),
 };
 
