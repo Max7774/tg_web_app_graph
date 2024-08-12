@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export const getContentType = () => ({
   "Content-Type": "application/json",
+  "X-Requested-With": "XMLHttpRequest",
 });
 
 export const errorCatch = (error: any): string => {
