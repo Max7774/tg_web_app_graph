@@ -15,7 +15,6 @@ export default () => {
         "/api/v1": {
           target: env.VITE_BASE_URL,
           changeOrigin: true,
-          secure: false, // Включите, если сервер https с самоподписанным сертификатом
           rewrite: (path) => path.replace(/^\/api\/v1/, ""),
         },
       },
