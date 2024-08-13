@@ -1,5 +1,0 @@
-[[redirects]]
-  from = "/api/v1/*"
-  to = "https://app.leadteh.ru/:splat"
-  status = 200
-  force = true
