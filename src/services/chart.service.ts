@@ -7,7 +7,8 @@ export const ChartService = {
       params: {
         api_token: import.meta.env.VITE_API_TOKEN,
         schema_id: import.meta.env.VITE_SCHEMA_ID,
-        "filters[tg_id]": window.Telegram.WebApp.initDataUnsafe.user?.id || 222,
+        "filters[tg_id]":
+          window.Telegram.WebApp.initDataUnsafe.user?.id || 274471479,
       },
       method: "GET",
     });
