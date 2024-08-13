@@ -14,8 +14,7 @@ export default () => {
         "/api/v1": {
           target: "https://app.leadteh.ru",
           changeOrigin: true,
-          secure: false, // Включите, если сервер https с самоподписанным сертификатом
-          rewrite: (path) => path.replace(/^\/api\/v1/, ""),
+          secure: true,
         },
       },
     },
